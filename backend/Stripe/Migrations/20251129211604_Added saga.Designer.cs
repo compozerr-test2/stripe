@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Stripe.Data;
@@ -11,9 +12,11 @@ using Stripe.Data;
 namespace Stripe.Migrations
 {
     [DbContext(typeof(StripeDbContext))]
-    partial class StripeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251129211604_Added saga")]
+    partial class Addedsaga
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
